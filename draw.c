@@ -19,6 +19,7 @@
 void add_circle( struct matrix * points, 
 		 double cx, double cy, double cz,
 		 double r, double step ) {
+  
 }
 
 /*======== void add_curve() ==========
@@ -35,7 +36,7 @@ Inputs:   struct matrix *points
          int type  
 Returns: 
 
-Adds the curve bounded by the 4 points passsed as parameters
+Adds the curve bounded by the 4 points passed as parameters
 of type specified in type (see matrix.h for curve type constants)
 to the matrix points
 ====================*/

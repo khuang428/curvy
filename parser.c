@@ -81,8 +81,8 @@ void parse_file ( char * filename,
     line[strlen(line)-1]='\0';
     //printf(":%s:\n",line);
 
-    double xvals[3];
-    double yvals[3];
+    double xvals[4];
+    double yvals[4];
     double zvals[4];
     struct matrix *tmp;
     double theta;
@@ -173,7 +173,14 @@ void parse_file ( char * filename,
       fgets(line, sizeof(line), f);
       sscanf(line, "%lf %lf %lf %lf", xvals, yvals, zvals, &r);
       
-    } 
+    }
+    else if(strncmp(line, "hermite", strlen(line)) == 0){
+      fgets(line, sizeof(line), f);
+    }
+    else if(strncmp(line, "bezier", strlen(line)) == 0){
+      fgets(line, sizeof(line), f);
+      sscanf(line, "%lf %lf %lf %lf %lf %lf %lf %lf",xvals, yvals, xvals+1, yvals+1, xvals+2, yvals+2, xvals+3, yvals+3);
+    }
   }
 }
   
